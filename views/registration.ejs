@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Registration</title>
+</head>
+
+<body id="login">
+
+    <div class="overlay">
+
+        <!-- ======================Registration form================================= -->
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-md-7 m-auto p-5">
+                    <div class="form p-5 ">
+                        <h2 class="text-center text-white">Registration</h2>
+                        <form action="/handelRegister" method="POST">
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <input type="text" value="<%= oldInputs.fName%>"  name="fName" class="form-control inp pt-3" placeholder="First Name">
+                                    <% if (errors.find(e=>e.param=='fName')) { %>
+                                        <div class="alert alert-danger my-3 text-center">
+                                             Invalid Value
+                                        </div>
+                                    <% } %>
+                                    
+                                </div>
+                                <div class="col">
+                                    <input type="text"  value="<%= oldInputs.lName%>"name="lName" class="form-control inp pt-3" placeholder="Last Name">
+                                    <% if (errors.find(e=>e.param=='lName')) { %>
+                                        <div class="alert alert-danger my-3 text-center">
+                                             Invalid Value
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <input type="text" value="<%= oldInputs.userName%>"  name="userName" class="form-control inp pt-3" placeholder="Username">
+                            <% if (errors.find(e=>e.param=='userName')) { %>
+                                <div class="alert alert-danger my-3 text-center">
+                                     Invalid Value
+                                </div>
+                            <% } %>
+                            <input type="email" value="<%= oldInputs.email%>" name="email" class="form-control inp pt-3" placeholder="Email">
+                            <% if (errors.find(e=>e.param=='email')) { %>
+                                <div class="alert alert-danger my-3 text-center">
+                                     Invalid Value
+                                </div>
+                            <% } %>
+                            <input type="password" value="<%= oldInputs.password%>" name="password" class="form-control inp pt-3 mb-3" placeholder="Password">
+                            <% if (errors.find(e=>e.param=='password')) { %>
+                                <div class="alert alert-danger my-3 text-center">
+                                     Invalid Value
+                                </div>
+                            <% } %>
+                            <button type="submit " class="btn btn-outline-info text-white w-100">Sign Up</button>
+                            <p class="text-center pb-3"> <a href="/" class="text-white mt-3 d-block">Sign In Here</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

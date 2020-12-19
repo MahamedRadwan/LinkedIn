@@ -1,0 +1,39 @@
+<%- include('shared/header.ejs')%>
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-8 m-auto card p-5">
+                <div class="">
+                    <h3>Account Setting</h3>
+                    <hr>
+                    <form action="/handelRepassword" method="POST">
+                        <input placeholder="Enter Old Password" value="<%= oldInputs.oldPassword%>"   name="oldPassword" type="password" class="form-control my-2">
+                        
+                        <% if (errors.find(e=>e.param=='oldPassword')) { %>
+                            <div class="alert alert-danger my-3 text-center">
+                                 Invalid Value
+                            </div>
+                        <% } %>
+                        <input placeholder="New Password" value="<%= oldInputs.newPassword%>"  name="newPassword" type="password" class="form-control my-2">
+                        <% if (errors.find(e=>e.param=='newPassword')) { %>
+                            <div class="alert alert-danger my-3 text-center">
+                                 Invalid Value
+                            </div>
+                        <% } %>
+                        <input placeholder="Repeat Password" value="<%= oldInputs.rePassword%>" name="rePassword" type="password" class="form-control my-2">
+                        <% if (errors.find(e=>e.param=='rePassword')) { %>
+                            <div class="alert alert-danger my-3 text-center">
+                                 Invalid Value
+                            </div>
+                        <% } %>
+                        <button type="submit" class="btn btn-info mt-3">Save Setting</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <%- include('shared/footer.ejs')%>
