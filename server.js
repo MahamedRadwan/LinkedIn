@@ -31,6 +31,6 @@ server.use(express.urlencoded({ extended: false }));
 server.use(indexRoute,homeRoute, registerRoute, account_settingRoute, ProfileRoute);
 
 mongoose.connect('mongodb+srv://Mohamed:Mohamed@cluster0.qkkyn.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
-server.listen(port, () => {
+server.listen(process.env.PORT||port, () => {
     console.log("the server is running....");
 })
